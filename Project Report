@@ -52,121 +52,105 @@ f(n)=h(n)
 
 * Greedy approach
 * Moves to best neighboring node
-* May get stuck in local optimum
+* May get stuck in local maxima, ridge problem and plateau problem.
 
-## 5. System Design
+5. System Design
 
-### 5.1 Input
+5.1 Input
 
 * Graph (nodes and weighted edges)
 * Heuristic values
 * Start node
 * Goal node
 
----
-
-### 5.2 Processing
+5.2 Processing
 
 * Each algorithm runs independently
 * Path and cost are calculated
-* Results are stored and compared
+* Results are compared
 
----
-
-### 5.3 Output
+5.3 Output
 
 * Path found by each algorithm
-* Total cost
+* Total cost of each algorithm
 * Best algorithm based on minimum cost
 
----
-
-## 6. Implementation Details
+6. Implementation Details
 
 * Programming Language: Python
 * Data Structures Used:
 
   * Graph (Dictionary)
   * Queue (BFS)
-  * Stack/Recursion (DFS)
+  * Stack (DFS)
   * Priority Queue (A*, Best First)
 
----
+7. Sample Input
+Enter nodes separated by space(eg: A B C): S A B C D E F G H I J K 
+Enter neighbors for S as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3):  A 4, B 10 , C 11
+Enter neighbors for A as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): B 8, D 5
+Enter neighbors for B as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): D 15
+Enter neighbors for C as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): D 8 , F 2 , E 20
+Enter neighbors for D as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): H 16, I 20, F 1
+Enter neighbors for E as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): G 19
+Enter neighbors for F as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): G 13
+Enter neighbors for G as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3):
+Enter neighbors for H as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): I 1, J 2
+Enter neighbors for I as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): J 5, K 13, G 5
+Enter neighbors for J as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): K 7
+Enter neighbors for K as 'neighbor weight' pairs, separated by commas (e.g., B 1, C 3): G 16
+Enter heuristic for S: 7
+Enter heuristic for A: 8
+Enter heuristic for B: 6
+Enter heuristic for D: 5
+Enter heuristic for E: 3
+Enter heuristic for H: 7
+Enter heuristic for I: 4
+Enter heuristic for J: 5
+Enter heuristic for K: 3
+Enter start node: S
+Enter goal node: G
 
-## 7. Sample Input
+8. Sample Output
+BFS: Path = ['S', 'C', 'F', 'G'], Cost = 26
+DFS: Path = ['S', 'A', 'B', 'D', 'H', 'I', 'J', 'K', 'G'], Cost = 72
+A*: Path = ['S', 'A', 'D', 'F', 'G'], Cost = 23
+Best First: Path = ['S', 'C', 'E', 'G'], Cost = 50
+Hill Climbing: Path = ['S', 'C', 'F', 'G'], Cost = 26
 
-Graph:
-A → B (1)
-A → C (3)
-B → D (2)
-C → D (1)
-D → E (5)
+🏆 Best Algorithm: A* with cost 23
 
-Heuristic:
-A = 7
-B = 6
-C = 2
-D = 1
-E = 0
-
-Start Node: A
-Goal Node: E
-
----
-
-## 8. Sample Output
-
-BFS: Path = A → B → D → E, Cost = 8
-DFS: Path = A → C → D → E, Cost = 9
-A*: Path = A → C → D → E, Cost = 7
-Best First: Path = A → C → D → E, Cost = 7
-Hill Climbing: Path = A → C → D → E, Cost = 7
-
-Best Algorithm: A*
-
----
-
-## 9. Advantages
+9. Advantages
 
 * Easy comparison of algorithms
 * Helps understand search strategies
 * Modular and extensible design
 * Useful for learning AI concepts
 
----
-
-## 10. Limitations
+10. Limitations
 
 * Hill climbing may fail to find solution
 * DFS may not give optimal result
 * AO* not implemented (basic version)
 * Requires correct heuristic for A*
+* entering the state search graph/ tree is quite complete one mistake might lead to a huge error.
 
----
+11. Future Enhancements
 
-## 11. Future Enhancements
-
-* Graphical User Interface (GUI)
-* Graph visualization using NetworkX
-* Animation of algorithm steps
+* Graphical User Interface (GUI) and opencv for detection of graphs/trees from pictures
 * Implementation of AO* algorithm
 * Performance analysis (time complexity)
 
----
-
-## 12. Conclusion
+12. Conclusion
 
 The Search Algorithm Analyzer successfully demonstrates the differences between various search algorithms. It highlights how different strategies lead to different results in terms of cost and efficiency. Among all, A* algorithm performs best in most cases due to its balanced approach using cost and heuristic.
 
 This project provides a strong foundation for understanding artificial intelligence search techniques.
 
----
+13. References
 
-## 13. References
-
-* Artificial Intelligence: A Modern Approach – Stuart Russell & Peter Norvig
+* Artificial Intelligence: A Modern Approach – Stuart Russell
 * Python Documentation
-* Online tutorials on search algorithms
 
----
+
 
