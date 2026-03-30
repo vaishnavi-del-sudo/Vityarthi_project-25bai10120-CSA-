@@ -1,1 +1,172 @@
+ALGORITHM ANALYZER
+
+1. Introduction
+
+Search algorithms are fundamental to artificial intelligence and machine learning. They are used to explore state spaces and find optimal paths or solutions. Different algorithms follow different strategies leading to variations in performance, cost and efficiency.
+This project, "Algorithm Analyzer", is designed to implement and compare multiple search algorithms ( namely BFS, DFS, Hill climbing, A*, Best First Search ) on a user-defined graph. The system evaluates each algorithm and identifies the most efficient one based on path cost.
+
+2. Objectives
+The main objectives of this project are:
+
+* To implement various search algorithms in Python
+* To analyze and compare their performance
+* To determine the most optimal path from start to goal node
+* To understand the role of heuristics in informed search algorithms
+* To build a system that automates algorithm comparison
+
+3. Scope of the Project
+This project focuses on:
+
+* Graph-based problem solving
+* Comparison of uninformed and informed search algorithms
+* Cost-based path optimization
+
+4. Algorithms Used
+
+4.1 Breadth First Search (BFS)
+
+* Explores nodes level by level ( breadth wise)
+* Guarantees shortest path in terms of steps
+* Does not consider heuristic cost
+
+4.2 Depth First Search (DFS)
+
+* Explores deeply into one branch before backtracking ( depth wise)
+* Does not guarantee optimal solution
+
+4.3 A* Algorithm
+
+* Uses function:
+  f(n) = g(n) + h(n)
+* Combines actual cost and heuristic
+* Guarantees optimal solution if heuristic is accurate
+
+4.4 Best First Search
+
+* Uses heuristic function only
+f(n)=h(n)
+* Selects node closest to goal
+* Faster but not always optimal
+
+4.5 Hill Climbing
+
+* Greedy approach
+* Moves to best neighboring node
+* May get stuck in local optimum
+
+## 5. System Design
+
+### 5.1 Input
+
+* Graph (nodes and weighted edges)
+* Heuristic values
+* Start node
+* Goal node
+
+---
+
+### 5.2 Processing
+
+* Each algorithm runs independently
+* Path and cost are calculated
+* Results are stored and compared
+
+---
+
+### 5.3 Output
+
+* Path found by each algorithm
+* Total cost
+* Best algorithm based on minimum cost
+
+---
+
+## 6. Implementation Details
+
+* Programming Language: Python
+* Data Structures Used:
+
+  * Graph (Dictionary)
+  * Queue (BFS)
+  * Stack/Recursion (DFS)
+  * Priority Queue (A*, Best First)
+
+---
+
+## 7. Sample Input
+
+Graph:
+A → B (1)
+A → C (3)
+B → D (2)
+C → D (1)
+D → E (5)
+
+Heuristic:
+A = 7
+B = 6
+C = 2
+D = 1
+E = 0
+
+Start Node: A
+Goal Node: E
+
+---
+
+## 8. Sample Output
+
+BFS: Path = A → B → D → E, Cost = 8
+DFS: Path = A → C → D → E, Cost = 9
+A*: Path = A → C → D → E, Cost = 7
+Best First: Path = A → C → D → E, Cost = 7
+Hill Climbing: Path = A → C → D → E, Cost = 7
+
+Best Algorithm: A*
+
+---
+
+## 9. Advantages
+
+* Easy comparison of algorithms
+* Helps understand search strategies
+* Modular and extensible design
+* Useful for learning AI concepts
+
+---
+
+## 10. Limitations
+
+* Hill climbing may fail to find solution
+* DFS may not give optimal result
+* AO* not implemented (basic version)
+* Requires correct heuristic for A*
+
+---
+
+## 11. Future Enhancements
+
+* Graphical User Interface (GUI)
+* Graph visualization using NetworkX
+* Animation of algorithm steps
+* Implementation of AO* algorithm
+* Performance analysis (time complexity)
+
+---
+
+## 12. Conclusion
+
+The Search Algorithm Analyzer successfully demonstrates the differences between various search algorithms. It highlights how different strategies lead to different results in terms of cost and efficiency. Among all, A* algorithm performs best in most cases due to its balanced approach using cost and heuristic.
+
+This project provides a strong foundation for understanding artificial intelligence search techniques.
+
+---
+
+## 13. References
+
+* Artificial Intelligence: A Modern Approach – Stuart Russell & Peter Norvig
+* Python Documentation
+* Online tutorials on search algorithms
+
+---
 
